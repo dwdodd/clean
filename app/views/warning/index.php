@@ -1,0 +1,1 @@
+<?php exit('<h1 style="text-align:center; color:skyblue; font-size:70px; margin-top:7%">404<br>Not found</h1>');

@@ -1,0 +1,30 @@
+# MOD_DEFLATE COMPRESSION
+SetOutputFilter DEFLATE
+
+# NO CACHEAR SI ESTOS ARCHIVOS EXISTEN
+SetEnvIfNoCase Request_URI \.(?:gif|jpe?g|png)$ no-gzip
+
+<IfModule mod_rewrite.c>
+  Options -Indexes
+  RewriteEngine On
+  RewriteCond %{REQUEST_FILENAME} !-l
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteCond %{REQUEST_FILENAME} !-f
+
+  RewriteRule ^api(.*)$ api/v1/solucion/list-name.php?info=$1 [NC,QSA,L]
+  RewriteRule ^evento(.*)$ index.php?info=$1 [NC,QSA,L]
+  RewriteRule ^home(.*)$ app/views/home/?info=$1 [NC,QSA,L]
+
+  ########### Error-Document ############
+  RewriteRule ^403/(.*)$ warning/403.php$1 [NC,QSA,L]
+  RewriteRule ^404/(.*)$ warning/404.php$1 [NC,QSA,L]
+  RewriteRule ^aviso/(.*)$ app/views/warning/$1 [NC,QSA,L]
+
+  ErrorDocument 404 http://localhost/clean/aviso/
+  ErrorDocument 404 http://localhost/clean/404/
+  ErrorDocument 403 http://localhost/clean/403/
+
+<Files .htaccess>
+  Order allow,deny
+  Deny from all
+</Files>

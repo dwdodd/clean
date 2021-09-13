@@ -1,0 +1,1 @@
+<?php exit('<h1 style="text-align:center; color:#f00; font-size:70px; margin-top:7%">Acceso no autorizado.</h1>'); 
