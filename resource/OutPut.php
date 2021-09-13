@@ -4,14 +4,20 @@ class OutPut
 {
     public static function format($format, $data)
     {
+        if( self::returnCero($format) ) return $data;
         self::diferenCode($format);
         self::inJson($format, $data);
         self::inText($format, $data);
     }
 
+    private static function returnCero($format)
+    {
+        if($format == 0) return true;
+    }
+
     private static function diferenCode($format)
     {
-        if(!(int)$format || (int)$format !== 1 && (int)$format !== 2) exit(json_encode([
+        if((int)$format !== 1 && (int)$format !== 2) exit(json_encode([
             'code' => 3,
             'message' => 'Error de código: ('.$format.'), debe indicar el formato de salida correcto.',
             'example' => 'Códigos premitidos: 1 = json y 2 = text'
