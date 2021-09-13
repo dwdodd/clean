@@ -15,16 +15,14 @@ ClassLoader::run([
 
 //new SessionSecure;
 
-$params = ltrim($_GET['info'],'/');
-$dir    = explode('/', $params);
-$param  = (object)['dir'=>$dir[0]];
+$param = GetToSwitch::param($_GET['info']);
 
 UrlParamsCompare::param(
     ['home','users'],
-    $param->dir
+    $param->view
 );
 
-switch($param->dir) {
+switch($param->view) {
     case 'home':
         $keys   = helper::homeKeys();
         $values = helper::homeValues();
@@ -47,7 +45,7 @@ switch($param->dir) {
     break;
 }
 
-Layout::html(ucfirst($param->dir), str_replace($keys, $values, $file));
+Layout::html(ucfirst($param->view), str_replace($keys, $values, $file));
 
 session_destroy();
 Layout::header_location();
