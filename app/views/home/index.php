@@ -36,7 +36,7 @@ switch($param->view) {
     break;
 
     default:
-        $param->dir = 'Inicio';
+        $param->view = 'Inicio';
         $info   = (object)['nombre' => 'maria', 'format' => 0];
         $list   = new GetListNameService(new GetListNameRepository);
         $keys   = helper::indexKeys();
