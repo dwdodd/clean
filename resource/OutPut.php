@@ -4,13 +4,13 @@ class OutPut
 {
     public static function format($format, $data)
     {
-        if( self::returnCero($format) ) return $data;
+        if( self::returnTrue($format) ) return $data;
         self::diferenCode($format);
         self::inJson($format, $data);
         self::inText($format, $data);
     }
 
-    private static function returnCero($format)
+    private static function returnTrue($format)
     {
         if($format == 0) return true;
     }
