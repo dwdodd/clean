@@ -5,7 +5,7 @@ class OutPut
     public static function format($format, $data)
     {
         if( self::returnTrue($format) ) return $data;
-        self::diferenCode($format);
+        self::diferentCode($format);
         self::inJson($format, $data);
         self::inText($format, $data);
     }
@@ -15,7 +15,7 @@ class OutPut
         if($format == 0) return true;
     }
 
-    private static function diferenCode($format)
+    public static function diferentCode($format)
     {
         if((int)$format !== 1 && (int)$format !== 2) exit(json_encode([
             'code' => 3,

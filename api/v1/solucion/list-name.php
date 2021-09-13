@@ -18,5 +18,7 @@ ClassLoader::run([
     'src/test/'
 ]);
 
+if($info->format == 0) OutPut::diferentCode($info->format);
+
 $get = new GetListNameService(new GetListNameRepository);
 $get( $info );
