@@ -1,6 +1,6 @@
 <?php
 
-class GetToSwitch
+class GetUrl
 {
     public static function param($get)
     {

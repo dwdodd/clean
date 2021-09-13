@@ -15,7 +15,7 @@ ClassLoader::run([
 
 //new SessionSecure;
 
-$param = GetToSwitch::param($_GET['info']);
+$param = GetUrl::param($_GET['info']);
 
 UrlParamsCompare::param(
     ['home','users'],
