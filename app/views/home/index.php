@@ -26,13 +26,13 @@ switch($param->view) {
     case 'home':
         $keys   = helper::homeKeys();
         $values = helper::homeValues();
-        $file   = View::content('home');
+        $file   = ComponentView::render('home');
     break;
 
     case 'users':
         $keys   = [];
         $values = [];
-        $file   = View::content('users');
+        $file   = ComponentView::render('users');
     break;
 
     default:
@@ -41,7 +41,7 @@ switch($param->view) {
         $list   = new GetListNameService(new GetListNameRepository);
         $keys   = helper::indexKeys();
         $values = helper::indexValues($list($info));
-        $file   = View::content('index');
+        $file   = ComponentView::render('index');
     break;
 }
 
