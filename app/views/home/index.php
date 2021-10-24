@@ -10,7 +10,7 @@ ClassLoader::run([
     'connection/manager/',
     'src/interface/',
     'src/test/',
-    'app/views/home/'
+    'app/views/home/helper/helper/'
 ]);
 
 //new SessionSecure;
@@ -24,8 +24,8 @@ UrlParamsCompare::param(
 
 switch($param->view) {
     case 'home':
-        $keys   = helper::homeKeys();
-        $values = helper::homeValues();
+        $keys   = HomeHelper::keys();
+        $values = HomeHelper::values();
         $file   = ComponentView::render('home');
     break;
 
@@ -39,8 +39,8 @@ switch($param->view) {
         $param->view = 'Inicio';
         $info   = (object)['nombre' => 'maria', 'format' => 0];
         $list   = new GetListNameService(new GetListNameRepository);
-        $keys   = helper::indexKeys();
-        $values = helper::indexValues($list($info));
+        $keys   = IndexHelper::keys();
+        $values = IndexHelper::values($list($info));
         $file   = ComponentView::render('index');
     break;
 }

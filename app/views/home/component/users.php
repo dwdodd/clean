@@ -9,6 +9,8 @@
 
 <script type="module">
     import hello from "{{host}}/app/assets/js/components/welcome.js";
+
     let h1_body = document.getElementById('body');
+    
     h1_body.innerHTML = hello;
 </script>
