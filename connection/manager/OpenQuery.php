@@ -19,8 +19,8 @@ class OpenQuery
             $id = $dbc->lastInsertId();
 
             return (object)[
-                'items' => !empty($items)?$items:0,
-                'id' => !empty($id)?$id:0
+                'items' => !empty($items)?$items:false,
+                'id' => !empty($id)?$id:false
             ];
         }
         catch (\PDOException $e){

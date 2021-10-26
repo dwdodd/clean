@@ -11,7 +11,13 @@ class Insert
         if(count($data) > 1){
             foreach($data as $key=>$value){
                 $fields .= $key.',';
-                $values .= $value.",~|~";
+                if(empty($value)){
+                    $value = 0;
+                    $values .= $value.",~|~";
+                }
+                else{
+                    $values .= $value.",~|~";
+                }
             }
 
             $fields = substr($fields,0,-1);
