@@ -15,22 +15,22 @@ class Index
 
         switch($param->index) {
             case 'registro':
-                $file = file_get_contents('config/layout/index/register.php');
+                $component = file_get_contents('config/layout/index/register.php');
             break;
 
             case 'recuperar-acceso':
-                $file = file_get_contents('config/layout/index/recover-passwd.php');
+                $component = file_get_contents('config/layout/index/recover-passwd.php');
             break;
             
             default:
-                $file = file_get_contents('config/layout/index/login.php');
+                $component = file_get_contents('config/layout/index/login.php');
             break;
         }
 
         $keys   = ['{{host}}','{@CSRF}'];
         $values = [BaseUrl::url(), self::token()];
         
-        exit(str_replace($keys, $values, $file));
+        exit(str_replace($keys, $values, $component));
     }
 
     private static function token()
