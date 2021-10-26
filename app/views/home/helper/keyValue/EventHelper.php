@@ -1,6 +1,6 @@
 <?php
 
-class HomeHelper
+class EventHelper
 {
     public static function keys(){
         return ['{{event}}'];
