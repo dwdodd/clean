@@ -37,6 +37,7 @@ class Layout
 
     public static function header_location()
     {
+        session_destroy();
         return HeaderLocation::header_location();
     }
 }
