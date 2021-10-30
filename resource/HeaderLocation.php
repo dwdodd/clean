@@ -11,9 +11,4 @@ class HeaderLocation
     {
         return header('location: /clean');
     }
-
-    public static function host()
-    {
-        return  '//'.$_SERVER['HTTP_HOST'].'/clean';
-    }
 }
