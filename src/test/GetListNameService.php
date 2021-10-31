@@ -1,5 +1,8 @@
 <?php
 
+require_once PATH_TO . 'resource/ClassLoader.php';
+ClassLoader::run(['resource/','connection/','connection/manager/','src/interface/','src/test/']);
+
 final class GetListNameService
 {
     private $repo;
@@ -14,8 +17,8 @@ final class GetListNameService
         try{
             if($info){
                 $response = $this->repo->listName($info);
-                $output   = OutPut::format($info->format, $response);
-                return $output;
+                $error    = OutPut::format($info->format, $response);
+                return $error;
             }
         }
         catch (\Throwable $th){ exit('Algo salio mal: ' . $th->getMessage()); }
