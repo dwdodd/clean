@@ -10,7 +10,7 @@ class AppTemplate
         $top = str_replace(
             ['{{title}}', '{{host}}'],
             [$title, BaseUrl::url()],
-            file_get_contents(PATH_TO . 'layout/templates/html/begin.php')
+            file_get_contents(PATH_TO . 'layout/templates/app/begin.php')
         );
 
         $con = str_replace(
@@ -22,13 +22,13 @@ class AppTemplate
         $footer = str_replace(
             ['{{host}}'],
             [BaseUrl::url()],
-            file_get_contents(PATH_TO . 'layout/templates/html/footer.php')
+            file_get_contents(PATH_TO . 'layout/templates/app/footer.php')
         );
 
         $end = str_replace(
             ['{{host}}', '{{version}}'],
             [BaseUrl::url(), "?v=".rand()],
-            file_get_contents(PATH_TO . 'layout/templates/html/bottom.php')
+            file_get_contents(PATH_TO . 'layout/templates/app/bottom.php')
         );
 
         echo $top.$con.$footer.$end;
