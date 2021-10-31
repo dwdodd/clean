@@ -1,8 +1,8 @@
 <?php
 
-class Index
+class IndexTemplate
 {
-    public static function root()
+    public static function index()
     {
         if(!isset($_SESSION)) session_start();
 
@@ -15,15 +15,15 @@ class Index
 
         switch($param->index) {
             case 'registro':
-                $component = file_get_contents('config/layout/index/register.php');
+                $component = file_get_contents('layout/templates/index/register.php');
             break;
 
             case 'recuperar-acceso':
-                $component = file_get_contents('config/layout/index/recover-passwd.php');
+                $component = file_get_contents('layout/templates/index/recover-passwd.php');
             break;
             
             default:
-                $component = file_get_contents('config/layout/index/login.php');
+                $component = file_get_contents('layout/templates/index/login.php');
             break;
         }
 

@@ -1,8 +1,8 @@
 <?php
 
-class Layout
+class AppTemplate
 {
-    public static function html($title, $content)
+    public static function app($title, $content)
     {
         // if(!isset($_SESSION)) session_start();
         // if(!isset($_SESSION['id-session'])) self::header_location();
@@ -10,7 +10,7 @@ class Layout
         $top = str_replace(
             ['{{title}}', '{{host}}'],
             [$title, BaseUrl::url()],
-            file_get_contents(PATH_TO . 'config/layout/html/begin.php')
+            file_get_contents(PATH_TO . 'layout/templates/html/begin.php')
         );
 
         $con = str_replace(
@@ -22,13 +22,13 @@ class Layout
         $footer = str_replace(
             ['{{host}}'],
             [BaseUrl::url()],
-            file_get_contents(PATH_TO . 'config/layout/html/footer.php')
+            file_get_contents(PATH_TO . 'layout/templates/html/footer.php')
         );
 
         $end = str_replace(
             ['{{host}}', '{{version}}'],
             [BaseUrl::url(), "?v=".rand()],
-            file_get_contents(PATH_TO . 'config/layout/html/bottom.php')
+            file_get_contents(PATH_TO . 'layout/templates/html/bottom.php')
         );
 
         echo $top.$con.$footer.$end;

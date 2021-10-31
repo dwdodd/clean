@@ -3,8 +3,8 @@
 define('PATH_TO', '../../../');
 require_once PATH_TO . 'resource/ClassLoader.php';
 
-ClassLoader::run(['resource/', 'config/layout/']);
+ClassLoader::run(['resource/', 'layout/']);
 
-Layout::html('Inicio - Dashboard', ComponentView::render('home'));
+AppTemplate::app('Inicio - Dashboard', ComponentView::render('home'));
 
-Layout::header_location();
+AppTemplate::header_location();
