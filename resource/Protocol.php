@@ -4,13 +4,11 @@ class Protocol
 {
     public static function is()
     {
-        if( $_SERVER['HTTP_HOST'] == 'localhost' ) return 'http://';
-        return 'https://';
+        return $_SERVER['HTTP_HOST'] == 'localhost' ? 'http://' :'https://';
     }
 
     public static function dir()
     {
-        if( $_SERVER['HTTP_HOST'] == 'localhost' ) return '/clean/';
-        return '/';
+        return $_SERVER['HTTP_HOST'] == 'localhost' ? '/clean/' :'/';
     }
 }
