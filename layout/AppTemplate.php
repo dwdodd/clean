@@ -37,6 +37,7 @@ class AppTemplate
 
     public static function header_location()
     {
+        session_start();
         session_destroy();
         return HeaderLocation::header_location();
     }
