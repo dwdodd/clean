@@ -26,7 +26,7 @@ class Update
         }
 
         try{
-            $sql = "UPDATE ".$table." SET ".$fields." WHERE ".$table.".$where = ?;";
+            $sql = "UPDATE $table SET $fields WHERE $table $where = ?;";
             $response = $dbc->prepare($sql);
             $response->execute($value_array);
 

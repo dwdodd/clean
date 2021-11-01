@@ -10,7 +10,7 @@ class GetSelectedColumnById
 
         try{
             $dbc = $dbc;
-            $sql = "SELECT ".$fields." FROM ".$table." WHERE $where = ?;";
+            $sql = "SELECT $fields FROM $table WHERE $where = ?;";
             $response = $dbc->prepare($sql, [\PDO::ATTR_CURSOR => \PDO::CURSOR_SCROLL]);
             $response->execute([$id]);
             if($response->rowCount()>0) return $response->fetchAll(\PDO::FETCH_OBJ)[0];

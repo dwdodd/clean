@@ -7,7 +7,7 @@ class Delete
         if(empty($id)) return 5; /*Falta el identificador (id).*/
 
         try{
-            $sql = "DELETE FROM ".$table." WHERE $where = ?;";
+            $sql = "DELETE FROM $table WHERE $where = ?;";
             $response = $dbc->prepare($sql);
             $response->execute([$id]);
 

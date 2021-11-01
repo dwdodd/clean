@@ -7,7 +7,7 @@ class GetAllById
         if(empty($id)) return 5; /*Falta el identificador (id).*/
 
         try{
-            $sql = "SELECT * FROM ".$table." WHERE $where = ?;";
+            $sql = "SELECT * FROM $table WHERE $where = ?;";
             $response = $dbc->prepare($sql, [\PDO::ATTR_CURSOR => \PDO::CURSOR_SCROLL]);
             $response->execute([$id]);
             if($response->rowCount()>0) return $response->fetchAll(\PDO::FETCH_OBJ)[0];

@@ -40,7 +40,7 @@ class Insert
         }
         
         try{
-            $sql = "INSERT INTO ".$table."(".$fields.")VALUES(".$new_value.");";
+            $sql = "INSERT INTO $table($fields)VALUES($new_value);";
             $response = $dbc->prepare($sql);
             $response->execute($values);
             $lid = $dbc->lastInsertId();
