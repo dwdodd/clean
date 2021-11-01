@@ -6,7 +6,7 @@ final class GetListNameRepository implements GetListNameInterface
     {
         // $response = Update::go("app_usuarios",['nombre'=>'Gaylord','apellido'=>'Dodd'],'idusuario',432, new ConnMySql);
         // $response = Insert::go("app_usuarios",['nombre'=>'Gaylord','apellido'=>'Dodd'], new ConnMySql);
-         $response = OpenQuery::go("select concat(nombre, ' ', apellido) as usuario, correo from app_usuarios where nombre like '%$info->nombre%'", new ConnMySql);
+         $response = OpenQuery::go("select concat(nombre, ' ', apellido) as usuario, correo from app_usuarios where nombre like '%$info->nombre%'", $info->conn);
         // $response = GetAllById::go("app_usuarios",'idusuario', 68, new ConnMySql);
         // $response = GetAll::go("app_usuarios", new ConnMySql);
         // $response = GetSelectedColumnById::go("app_usuarios",['cv', 'telefono'],'idusuario', 412, new ConnMySql);
