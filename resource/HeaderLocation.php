@@ -4,11 +4,11 @@ class HeaderLocation
 {
     public static function logout()
     {
-        header('location: //'.$_SERVER['HTTP_HOST'].'/clean');
+        header('location:'.Protocol::is().$_SERVER['HTTP_HOST'].Protocol::dir());
     }
 
     public static function header_location()
     {
-        return header('location: /clean');
+        return header('location:'.Protocol::dir());
     }
 }
