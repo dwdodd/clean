@@ -7,7 +7,7 @@ use connection\ConnMySql;
 use src\test\GetListRepository;
 
 $_GET['conn'] = new ConnMySql;
-$_GET['nombre'] ='mar';
+$_GET['nombre'];
 
 $get = new GetListService(new GetListRepository);
 $get( (object)@$_GET );
