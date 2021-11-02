@@ -7,7 +7,5 @@ use resource\{ClassLoader,ComponentView};
 use layout\AppTemplate;
 
 ClassLoader::run();
-
 AppTemplate::app('Inicio - Dashboard', ComponentView::render('home'));
-
 AppTemplate::header_location();
