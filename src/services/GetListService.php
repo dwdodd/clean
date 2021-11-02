@@ -3,7 +3,7 @@
 require_once PATH_TO . 'resource/ClassLoader.php';
 use resource\ClassLoader;
 use src\services\GetListRepository;
-ClassLoader::run();
+new ClassLoader;
 
 final class GetListService
 {
