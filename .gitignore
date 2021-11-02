@@ -1,1 +1,2 @@
-connection/envConn/.MySqlConfigEnv
+connection/envConn/*
+.vscode
