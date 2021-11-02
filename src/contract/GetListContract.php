@@ -2,7 +2,7 @@
 
 namespace src\contract;
 
-interface GetList
+interface GetListContract
 {
     public function list($info);
 }

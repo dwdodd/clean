@@ -1,25 +1,19 @@
 <?php
 
 require_once PATH_TO . 'resource/ClassLoader.php';
-
 use resource\ClassLoader;
-use src\test\GetListInterface;
-
+use src\services\GetListRepository;
 ClassLoader::run();
 
 final class GetListService
 {
     private $repo;
 
-    public function __construct(GetListInterface $repo)
-    {
-        $this->repo = $repo;
-    }
-
-    public function __invoke($info)
+    public function __construct($info)
     {
         try{
             if($info){
+                $this->repo = new GetListRepository;
                 $response = $this->repo->list($info);
                 exit(json_encode($response));
             }

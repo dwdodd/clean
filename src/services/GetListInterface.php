@@ -1,6 +1,6 @@
 <?php
 
-namespace src\test;
+namespace src\services;
 
 use src\contract\GetList;
 
