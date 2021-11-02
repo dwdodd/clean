@@ -1,5 +1,9 @@
 <?php
 
+namespace layout;
+
+use resource\{HeaderLocation,BaseUrl};
+
 class AppTemplate
 {
     public static function app($title, $content)

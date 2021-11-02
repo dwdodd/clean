@@ -1,5 +1,7 @@
 <?php
 
+namespace connection\manager;
+
 class GetSelectedColumnById
 {
     public static function go($table,$data,$where,$id,$dbc=null)

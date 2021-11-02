@@ -1,10 +1,12 @@
 <?php
 
+namespace resource;
+
 class UrlParamsCompare
 {
     public static function param($verbs=[], $param)
     {
-        if( $param && !in_array($param, $verbs) ) Layout::html('Not Found', self::text($param));
+        if( $param && !in_array($param, $verbs) ) exit(self::text($param));
     }
 
     private static function text($param)

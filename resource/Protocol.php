@@ -1,5 +1,7 @@
 <?php
 
+namespace resource;
+
 class Protocol
 {
     public static function is()

@@ -1,5 +1,7 @@
 <?php
 
+namespace connection\manager;
+
 class Insert
 {
     public static function go($table,$data=[],$dbc)

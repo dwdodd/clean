@@ -1,5 +1,9 @@
 <?php
 
+namespace resource;
+
+use resource\HeaderLocation;
+
 class SessionSecure
 {
     public function __construct()

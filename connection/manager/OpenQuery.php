@@ -1,5 +1,7 @@
 <?php
 
+namespace connection\manager;
+
 class OpenQuery
 {
     public static function go($openquery,$dbc=null)

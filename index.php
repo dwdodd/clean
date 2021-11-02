@@ -1,5 +1,9 @@
 <?php
 
 require_once 'resource/ClassLoader.php';
-ClassLoader::run(['resource/','layout/']);
+
+use resource\ClassLoader;
+use layout\IndexTemplate;
+
+ClassLoader::run();
 IndexTemplate::index();

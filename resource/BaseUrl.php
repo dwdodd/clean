@@ -1,5 +1,9 @@
 <?php
 
+namespace resource;
+
+use resource\Protocol;
+
 class BaseUrl
 {
     public static function url()

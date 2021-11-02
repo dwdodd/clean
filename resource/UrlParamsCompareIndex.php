@@ -1,5 +1,7 @@
 <?php
 
+namespace resource;
+
 class UrlParamsCompareIndex
 {
     public static function param($verbs=[], $param)

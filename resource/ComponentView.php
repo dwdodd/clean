@@ -1,5 +1,7 @@
 <?php
 
+namespace resource;
+
 class ComponentView
 {
     public static function render($file)

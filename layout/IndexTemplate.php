@@ -1,5 +1,9 @@
 <?php
 
+namespace layout;
+
+use resource\{UrlParamsCompareIndex,BaseUrl};
+
 class IndexTemplate
 {
     public static function index()

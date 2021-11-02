@@ -6,7 +6,7 @@
     const list = document.getElementById('list');
     const frag = document.createDocumentFragment();
     const getList = async () => {
-        let get  = await fetch(`{{host}}app/api/test/list-name.php?nombre=mi&format=1`);
+        let get  = await fetch(`{{host}}app/api/test/list.php`);
         let info = await get.json();
         info.items.forEach(element => {
             let p = document.createElement('p');

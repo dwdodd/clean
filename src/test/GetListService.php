@@ -1,13 +1,17 @@
 <?php
 
 require_once PATH_TO . 'resource/ClassLoader.php';
-ClassLoader::run(['resource/','connection/','connection/manager/','src/interface/','src/test/']);
 
-final class GetListNameService
+use resource\ClassLoader;
+use src\test\GetListInterface;
+
+ClassLoader::run();
+
+final class GetListService
 {
     private $repo;
 
-    public function __construct(GetListNameInterface $repo)
+    public function __construct(GetListInterface $repo)
     {
         $this->repo = $repo;
     }
@@ -16,9 +20,8 @@ final class GetListNameService
     {
         try{
             if($info){
-                $response = $this->repo->listName($info);
-                $error    = OutPut::format($info->format, $response);
-                return $error;
+                $response = $this->repo->list($info);
+                exit(json_encode($response));
             }
         }
         catch (\Throwable $th){ exit('Algo salio mal: ' . $th->getMessage()); }

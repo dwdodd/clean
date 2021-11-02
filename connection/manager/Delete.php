@@ -1,5 +1,7 @@
 <?php
 
+namespace connection\manager;
+
 class Delete
 {
     public static function go($table ,$where, $id, $dbc=null)

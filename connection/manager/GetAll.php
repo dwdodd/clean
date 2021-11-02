@@ -1,5 +1,7 @@
 <?php
 
+namespace connection\manager;
+
 class GetAll
 {
     public static function go($table,$dbc=null)
