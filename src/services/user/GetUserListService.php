@@ -1,7 +1,7 @@
 <?php
 
 require_once PATH_TO . 'resource/ClassLoader.php';
-use resource\ClassLoader;
+use resource\{ClassLoader, Middleware};
 use src\repositories\user\GetUserListRepository;
 new ClassLoader;
 
@@ -13,6 +13,7 @@ final class GetUserListService
     {
         try{
             if($info){
+                Middleware::api_request('');
                 $this->repo = new GetUserListRepository;
                 $response = $this->repo->getList($info);
                 exit(json_encode($response));
