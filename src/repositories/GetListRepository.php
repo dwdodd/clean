@@ -4,7 +4,7 @@ namespace src\repositories;
 
 use connection\ConnMySql;
 use connection\manager\OpenQuery;
-use src\contract\GetListContract;
+use src\contracts\GetListContract;
 
 final class GetListRepository implements GetListContract
 {
