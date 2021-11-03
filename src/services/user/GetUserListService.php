@@ -13,7 +13,7 @@ final class GetUserListService
     {
         try{
             if($info){
-                Middleware::api_request('');
+                Middleware::request_location($info->location);
                 $this->repo = new GetUserListRepository;
                 $response = $this->repo->getList($info);
                 exit(json_encode($response));
