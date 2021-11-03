@@ -1,6 +1,6 @@
 <?php
 
-namespace src\contract;
+namespace src\contracts;
 
 interface GetListContract
 {
