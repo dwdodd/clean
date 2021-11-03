@@ -18,11 +18,11 @@ class Middleware
 
         switch($location){
             case 'internal-request':
-                if(!@$_SESSION) session_start();
-                if(!@$_SESSION['id-session']) exit(json_encode([
-                    'code' => 3,
-                    'message' => 'No estas autenticado'
-                ]));
+                //if(!@$_SESSION) session_start();
+                // if(!@$_SESSION['id-session']) exit(json_encode([
+                //     'code' => 3,
+                //     'message' => 'No estas autenticado'
+                // ]));
             break;
             case 'external-request':
                 if(!in_array($_GET['request-code'], ['ExternalCode32'])) exit(json_encode([
