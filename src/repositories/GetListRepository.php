@@ -1,6 +1,6 @@
 <?php
 
-namespace src\services;
+namespace src\repositories;
 
 use connection\ConnMySql;
 use connection\manager\OpenQuery;
