@@ -4,5 +4,5 @@ namespace src\contracts;
 
 interface GetListContract
 {
-    public function list($info);
+    public function getList($info);
 }

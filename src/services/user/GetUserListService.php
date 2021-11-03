@@ -14,7 +14,7 @@ final class GetUserListService
         try{
             if($info){
                 $this->repo = new GetUserListRepository;
-                $response = $this->repo->list($info);
+                $response = $this->repo->getList($info);
                 exit(json_encode($response));
             }
         }
