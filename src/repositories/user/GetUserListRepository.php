@@ -1,12 +1,12 @@
 <?php
 
-namespace src\repositories;
+namespace src\repositories\user;
 
 use connection\ConnMySql;
 use connection\manager\OpenQuery;
 use src\contracts\GetListContract;
 
-final class GetListRepository implements GetListContract
+final class GetUserListRepository implements GetListContract
 {
     public function list($info)
     {

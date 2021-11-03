@@ -2,10 +2,10 @@
 
 require_once PATH_TO . 'resource/ClassLoader.php';
 use resource\ClassLoader;
-use src\repositories\GetListRepository;
+use src\repositories\user\GetUserListRepository;
 new ClassLoader;
 
-final class GetListService
+final class GetUserListService
 {
     private $repo;
 
@@ -13,7 +13,7 @@ final class GetListService
     {
         try{
             if($info){
-                $this->repo = new GetListRepository;
+                $this->repo = new GetUserListRepository;
                 $response = $this->repo->list($info);
                 exit(json_encode($response));
             }

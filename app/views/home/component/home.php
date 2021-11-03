@@ -6,7 +6,7 @@
     const list = document.getElementById('list');
     const frag = document.createDocumentFragment();
     const getList = async () => {
-        let get = await fetch(`{{host}}app/api/services/list.php`);
+        let get = await fetch(`{{host}}app/api/services/user/user-list.php`);
         if( get.ok ){
             let info = await get.json();
             info.items.forEach(element => {
