@@ -17,6 +17,5 @@
         }else{
             alert( get.status )
         }
-        
     };getList();
 </script>
