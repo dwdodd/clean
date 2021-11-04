@@ -20,7 +20,8 @@ final class UserLoginService
                 $response->token   = SetToken::token();
                 if(!@$_SESSION) session_start();
                 $_SESSION['token-access'] = $response->token;
-                exit(json_encode($response));
+                $_SESSION['id-session'] = session_id();
+                exit(json_encode(['code' => 1,'data'=>$response]));
             }
         }
         catch (\Throwable $th){ exit('Algo salio mal: ' . $th->getMessage()); }

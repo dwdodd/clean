@@ -8,7 +8,7 @@ class HeaderLocation
 {
     public static function logout()
     {
-        header('location:'.Protocol::is().$_SERVER['HTTP_HOST'].Protocol::dir());
+        header('location:'.Protocol::is().$_SERVER['HTTP_HOST'].Protocol::dir()).exit;
     }
 
     public static function header_location()

@@ -1,12 +1,17 @@
 <h1>Hola soy el Home - Dashboard :)</h1>
 
+<h3><a href="{{host}}api/v1/services/user/user-logout.php">salir</a></h3>
+
+<input type="hidden" id="token" value="{{token}}" />
+
 <div id="list"></div>
 
 <script>
     const list = document.getElementById('list');
     const frag = document.createDocumentFragment();
     const nombre = '';
-    const token  = 'ejRaoYqUzFsre3BqfF2OAXxXTJjeFTosmA==';
+    const token  = document.getElementById('token').value;
+
     const getList = async () => {
         let get = await fetch(`{{host}}api/v1/services/user/user-list.php`,{
             method:'post',
