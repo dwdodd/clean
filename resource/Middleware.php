@@ -8,7 +8,7 @@ class Middleware
     {
         $token ? '' : exit(json_encode([
             'code' => 3,
-            'message' => 'Falta el token'
+            'message' => 'Acceso no permitido'
         ]));
 
         if(!@$_SESSION) session_start();
