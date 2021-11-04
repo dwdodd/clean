@@ -17,7 +17,9 @@ final class UserLoginService
                     'code' => 3,
                     'message' => 'Error en usuario ó contraseña'
                 ]));
-                $response->token = SetToken::token();
+                $response->token   = SetToken::token();
+                if(!@$_SESSION) session_start();
+                $_SESSION['token-access'] = $response->token;
                 exit(json_encode($response));
             }
         }

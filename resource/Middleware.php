@@ -4,32 +4,17 @@ namespace resource;
 
 class Middleware
 {
-    public static function request_location($location)
+    public static function token_access($token)
     {
-        $location ? '' : exit(json_encode([
+        $token ? '' : exit(json_encode([
             'code' => 3,
-            'message' => 'Falta la clave de petición'
+            'message' => 'Falta el token'
         ]));
 
-        if(!in_array($location, ['ir', 'er'])) exit(json_encode([
+        if(!@$_SESSION) session_start();
+        if(!in_array($token, [@$_SESSION['token-access']])) exit(json_encode([
             'code' => 3,
-            'message' => "Clave de petición: ($location) errónea."
+            'message' => 'No estas autenticado'
         ]));
-
-        switch($location){
-            case 'ir':
-                //if(!@$_SESSION) session_start();
-                // if(!@$_SESSION['id-session']) exit(json_encode([
-                //     'code' => 3,
-                //     'message' => 'No estas autenticado'
-                // ]));
-            break;
-            case 'er':
-                if(!in_array($_GET['rtoken'], ['ExternalCode32'])) exit(json_encode([
-                    'code' => 3,
-                    'message' => 'No estas autenticado'
-                ]));
-            break;
-        }
     }
 }
