@@ -12,7 +12,7 @@ final class UserLoginService
         try{
             if($info){
                 $repository = new UserLoginRepository;
-                $response = $repository->login($info);
+                $response = $repository->verifyCredential($info);
                 if(!$response) exit(json_encode([
                     'code' => 3,
                     'message' => 'Error en usuario ó contraseña'
