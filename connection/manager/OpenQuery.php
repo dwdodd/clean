@@ -20,6 +20,7 @@ class OpenQuery
             $items = $response->fetchAll(\PDO::FETCH_OBJ);
             $id = $dbc->lastInsertId();
 
+            if(empty($id)) return (object)['items'=>!empty($items)?$items:false];
             return (object)[
                 'items' => !empty($items)?$items:false,
                 'id' => !empty($id)?$id:false
