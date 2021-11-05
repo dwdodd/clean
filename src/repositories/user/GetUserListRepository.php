@@ -4,9 +4,8 @@ namespace src\repositories\user;
 
 use connection\ConnMySql;
 use connection\manager\OpenQuery;
-use src\contracts\GetListContract;
 
-final class GetUserListRepository implements GetListContract
+final class GetUserListRepository
 {
     public function getList($info)
     {

@@ -4,9 +4,8 @@ namespace src\repositories\user;
 
 use connection\ConnMySql;
 use connection\manager\OpenQuery;
-use src\contracts\GetLoginContract;
 
-final class UserLoginRepository implements GetLoginContract
+final class UserLoginRepository
 {
     public function login($info)
     {
