@@ -13,27 +13,7 @@
         <input type="text" id="clave" />
         <button id="btn-login">Acceder</button>
     </div>
-    <input type="text" id="token-csrf" value="{@CSRF}"/>
-
-    <script>
-        document.getElementById('btn-login').addEventListener('click', async () => {
-            let correo = document.getElementById('correo').value;
-            let clave  = document.getElementById('clave').value;
-
-            if(!correo.trim() || !clave.trim()) return alert('Ingresar credenciales');
-
-            let get = await fetch(`{{host}}api/v1/services/user/user-login.php`,{
-                method:'post',
-                body: JSON.stringify({ correo, clave }),
-                headers:{ 'Content-Type': 'application/json' }
-            });
-            if( get.ok ){
-                let info = await get.json();
-                if(info.code == 3) return alert(info.message);
-                if(info.code == 1) window.location = '{{host}}home'
-            }
-            else{alert( get.status );}
-        });
-    </script>
+    <input type="hidden" id="token-csrf" value="{@CSRF}"/>
+    <script src="{{host}}app/assets/js/login.js" type="module"></script>
 </body>
 </html>
