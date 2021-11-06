@@ -13,7 +13,7 @@
         const frag = document.createDocumentFragment();
         const nombre = '';
         const token  = document.getElementById('token').value;
-        let get = await fetch(`api/v1/services/user/user-list.php`,{
+        const get = await fetch(`api/v1/services/user/user-list.php`,{
             method:'post',
             body: JSON.stringify({ nombre, token }),
             headers:{ 'Content-Type': 'application/json' }
