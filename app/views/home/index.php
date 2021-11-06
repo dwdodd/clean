@@ -1,6 +1,5 @@
 <?php
 
-if(!@$_SESSION) session_start();
 define('PATH_TO', substr(dirname(__FILE__),0,22));
 require_once PATH_TO . 'resource/ClassLoader.php';
 
