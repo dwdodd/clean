@@ -19,4 +19,4 @@ if(@$_SESSION['token-csrf']){
     new UserLoginService( (object)$_POST );
 }
 
-//new UserLoginService( (object)$_POST );
+new UserLoginService( (object)$_POST );
