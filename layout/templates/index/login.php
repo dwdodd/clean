@@ -19,6 +19,9 @@
         document.getElementById('btn-login').addEventListener('click', async () => {
             let correo = document.getElementById('correo').value;
             let clave  = document.getElementById('clave').value;
+
+            if(!correo.trim() || !clave.trim()) return alert('Ingresar credenciales');
+
             let get = await fetch(`{{host}}api/v1/services/user/user-login.php`,{
                 method:'post',
                 body: JSON.stringify({ correo, clave }),
@@ -26,11 +29,10 @@
             });
             if( get.ok ){
                 let info = await get.json();
-                console.log(info)
+                if(info.code == 3) return alert(info.message);
                 if(info.code == 1) window.location = '{{host}}home'
-            }else{
-                alert( get.status )
             }
+            else{alert( get.status );}
         });
     </script>
 </body>
