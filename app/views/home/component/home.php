@@ -11,7 +11,6 @@
     const frag = document.createDocumentFragment();
     const nombre = '';
     const token  = document.getElementById('token').value;
-
     const getList = async () => {
         let get = await fetch(`{{host}}api/v1/services/user/user-list.php`,{
             method:'post',
@@ -28,5 +27,7 @@
         }else{
             alert( get.status )
         }
-    };getList();
+    };
+    
+    getList();
 </script>
