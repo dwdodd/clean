@@ -6,13 +6,14 @@
 
 <div id="list"></div>
 
-<script>
-    const list = document.getElementById('list');
-    const frag = document.createDocumentFragment();
-    const nombre = '';
-    const token  = document.getElementById('token').value;
+<script type="module">
+    import host from "{{host}}app/assets/js/base_url.js";
     const getList = async () => {
-        let get = await fetch(`{{host}}api/v1/services/user/user-list.php`,{
+        const list = document.getElementById('list');
+        const frag = document.createDocumentFragment();
+        const nombre = '';
+        const token  = document.getElementById('token').value;
+        let get = await fetch(`api/v1/services/user/user-list.php`,{
             method:'post',
             body: JSON.stringify({ nombre, token }),
             headers:{ 'Content-Type': 'application/json' }
@@ -27,7 +28,5 @@
         }else{
             alert( get.status )
         }
-    }
-
-    getList();
+    };getList();
 </script>

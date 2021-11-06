@@ -1,2 +1,2 @@
-let host = window.location.hostname == 'localhost' ? `${window.location.origin}${window.location.pathname}` : '/';
+let host = window.location.hostname == 'localhost' ? `${window.location.origin}/clean/` : '/';
 export default host;
