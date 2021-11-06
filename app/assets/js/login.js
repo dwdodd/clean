@@ -8,6 +8,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
         if(!correo.trim() || !clave.trim()) return alert('Ingresar credenciales');
 
+        correo = CryptoJS.AES.encrypt(JSON.stringify(correo),fdecoderto,{ format: CryptoJSAesJson }).toString();
+        clave  = CryptoJS.AES.encrypt(JSON.stringify(clave),fdecoderto,{ format: CryptoJSAesJson }).toString();
+
         let get = await fetch(`${host}api/v1/services/user/user-login.php`,{
             method:'post',
             body: JSON.stringify({ correo, clave, token }),

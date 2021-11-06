@@ -14,6 +14,8 @@
         <button id="btn-login">Acceder</button>
     </div>
     <input type="hidden" id="token-csrf" value="{@CSRF}"/>
+    <script src="{{host}}app/assets/js/libraries/cryptojs/mycrypto-format.js"></script>
+    <script src="{{host}}app/assets/js/libraries/cryptojs/mycrypto.js"></script>
     <script src="{{host}}app/assets/js/login.js" type="module"></script>
 </body>
 </html>
