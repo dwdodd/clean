@@ -22,6 +22,17 @@ SetEnvIfNoCase Request_URI \.(?:gif|jpe?g|png)$ no-gzip
   ErrorDocument 404 http://localhost/clean/aviso/
   ErrorDocument 404 http://localhost/clean/404/
   ErrorDocument 403 http://localhost/clean/403/
+</ifModule>
+
+<FilesMatch "\.(html|js|css)$">
+  FileETag None
+  <ifModule mod_headers.c>
+  Header unset ETag
+  Header set Cache-Control "max-age=0, no-cache, no-store, must-revalidate"
+  Header set Pragma "no-cache"
+  Header set Expires "Wed, 1 han 2000 05:00:00 GMT"
+  </ifModule>
+</FilesMatch>
 
 <Files .htaccess>
   Order allow,deny
