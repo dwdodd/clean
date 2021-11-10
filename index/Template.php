@@ -1,10 +1,10 @@
 <?php
 
-namespace layout;
+namespace index;
 
 use resource\{UrlParamsCompareIndex,BaseUrl};
 
-class IndexTemplate
+class Template
 {
     public static function index()
     {
@@ -19,15 +19,15 @@ class IndexTemplate
 
         switch($param->index) {
             case 'registro':
-                $component = file_get_contents('layout/templates/index/register.php');
+                $component = file_get_contents('index/content/register.php');
             break;
 
             case 'recuperar-acceso':
-                $component = file_get_contents('layout/templates/index/recover-passwd.php');
+                $component = file_get_contents('index/content/recover-passwd.php');
             break;
             
             default:
-                $component = file_get_contents('layout/templates/index/login.php');
+                $component = file_get_contents('index/content/login.php');
             break;
         }
 

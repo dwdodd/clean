@@ -5,10 +5,10 @@ require_once PATH_TO . 'resource/ClassLoader.php';
 
 use resource\{ClassLoader,ComponentView};
 use app\views\home\helpers\HomeKeyValue;
-use layout\AppTemplate;
+use app\layout\Template;
 new ClassLoader;
 
-AppTemplate::app(
+Template::app(
     'Inicio - Dashboard',
     str_replace(
         HomeKeyValue::key(),
@@ -17,4 +17,4 @@ AppTemplate::app(
     )
 );
 
-AppTemplate::header_location();
+Template::header_location();

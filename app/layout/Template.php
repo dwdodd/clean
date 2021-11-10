@@ -1,10 +1,10 @@
 <?php
 
-namespace layout;
+namespace app\layout;
 
 use resource\{HeaderLocation,BaseUrl};
 
-class AppTemplate
+class Template
 {
     public static function app($title, $content)
     {
@@ -14,7 +14,7 @@ class AppTemplate
         $top = str_replace(
             ['{{title}}', '{{host}}'],
             [$title, BaseUrl::url()],
-            file_get_contents(PATH_TO . 'layout/templates/app/begin.php')
+            file_get_contents(PATH_TO . 'app/layout/content/begin.php')
         );
 
         $con = str_replace(
@@ -26,13 +26,13 @@ class AppTemplate
         $footer = str_replace(
             ['{{host}}'],
             [BaseUrl::url()],
-            file_get_contents(PATH_TO . 'layout/templates/app/footer.php')
+            file_get_contents(PATH_TO . 'app/layout/content/footer.php')
         );
 
         $end = str_replace(
             ['{{host}}', '{{version}}'],
             [BaseUrl::url(), "?v=".rand()],
-            file_get_contents(PATH_TO . 'layout/templates/app/bottom.php')
+            file_get_contents(PATH_TO . 'app/layout/content/bottom.php')
         );
 
         echo $top.$con.$footer.$end;
