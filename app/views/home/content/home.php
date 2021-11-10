@@ -1,6 +1,6 @@
 <h1>Hola soy el Home - Dashboard :)</h1>
 
-<h3><a href="{{host}}api/v1/services/user/user-logout.php">salir</a></h3>
+<h3><a href="{{host}}user-log/out">salir</a></h3>
 
 <input type="hidden" id="token" value="{{token}}" />
 

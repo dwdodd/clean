@@ -11,8 +11,17 @@ SetEnvIfNoCase Request_URI \.(?:gif|jpe?g|png)$ no-gzip
   RewriteCond %{REQUEST_FILENAME} !-d
   RewriteCond %{REQUEST_FILENAME} !-f
 
+  ####### Index -Events #######
   RewriteRule ^evento(.*)$ index.php?info=$1 [NC,QSA,L]
+  #############################
+
+  ####### Views #######
   RewriteRule ^home(.*)$ app/views/home/?info=$1 [NC,QSA,L]
+  #####################
+
+  ####### API Resource #######
+  RewriteRule ^user-log(.*)$ api/v1/services/log/?info=$1 [NC,QSA,L]
+  #############################
 
   ########### Error-Document ############
   RewriteRule ^403/(.*)$ warning/403.php$1 [NC,QSA,L]
@@ -22,6 +31,7 @@ SetEnvIfNoCase Request_URI \.(?:gif|jpe?g|png)$ no-gzip
   ErrorDocument 404 http://localhost/clean/aviso/
   ErrorDocument 404 http://localhost/clean/404/
   ErrorDocument 403 http://localhost/clean/403/
+  #######################################
 </ifModule>
 
 <FilesMatch "\.(html|js|css)$">

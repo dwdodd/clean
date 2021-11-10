@@ -2,7 +2,7 @@
 
 namespace app\views\home\helpers;
 
-class HomeKeyValue
+class HomeHook
 {
     public static function key()
     {

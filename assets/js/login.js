@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
         correo = CryptoJS.AES.encrypt(JSON.stringify(correo),fdecoderto,{ format: CryptoJSAesJson }).toString();
         clave  = CryptoJS.AES.encrypt(JSON.stringify(clave),fdecoderto,{ format: CryptoJSAesJson }).toString();
 
-        let get = await fetch(`${host}api/v1/services/user/user-login.php`,{
+        let get = await fetch(`${host}user-log/in`,{
             method:'post',
             body: JSON.stringify({ correo, clave, token }),
             headers:{ 'Content-Type': 'application/json' }
@@ -19,10 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         if( get.ok ){
             let info = await get.json();
-            if(info.code == 3){
-                alert(info.message);
-                setTimeout(() => window.location='', 10);
-            }
+            if(info.code == 3) alert(info.message);
             if(info.code == 1) window.location = `${host}home`;
         }
         else{alert( get.status );}
