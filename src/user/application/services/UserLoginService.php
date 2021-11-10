@@ -2,7 +2,7 @@
 
 require_once PATH_TO . 'autoload.php';
 use resource\SetToken;
-use src\repositories\user\UserLoginRepository;
+use src\user\infrastructure\repositories\UserLoginRepository;
 
 final class UserLoginService
 {
