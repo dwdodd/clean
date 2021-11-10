@@ -16,6 +16,6 @@
     <input type="hidden" id="token-csrf" value="{@CSRF}"/>
     <script src="{{host}}assets/js/libraries/cryptojs/mycrypto-format.js"></script>
     <script src="{{host}}assets/js/libraries/cryptojs/mycrypto.js"></script>
-    <script src="{{host}}assets/js/login.js" type="module"></script>
+    <script src="{{host}}xindex/js/login.js" type="module"></script>
 </body>
 </html>
