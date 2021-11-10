@@ -1,9 +1,8 @@
 <?php
 
-require_once PATH_TO . 'resource/ClassLoader.php';
-use resource\{ClassLoader, Middleware};
+require_once PATH_TO . 'autoload.php';
+use resource\Middleware;
 use src\repositories\user\GetUserListRepository;
-new ClassLoader;
 
 final class GetUserListService
 {

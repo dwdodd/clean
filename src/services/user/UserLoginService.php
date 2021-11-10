@@ -1,9 +1,8 @@
 <?php
 
-require_once PATH_TO . 'resource/ClassLoader.php';
-use resource\{ClassLoader, SetToken};
+require_once PATH_TO . 'autoload.php';
+use resource\SetToken;
 use src\repositories\user\UserLoginRepository;
-new ClassLoader;
 
 final class UserLoginService
 {

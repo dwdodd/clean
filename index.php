@@ -1,5 +1,4 @@
 <?php
 
-require_once 'resource/ClassLoader.php';
-new resource\ClassLoader;
+require_once 'autoload.php';
 index\Template::index();
