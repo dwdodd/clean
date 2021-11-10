@@ -19,7 +19,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
         if( get.ok ){
             let info = await get.json();
-            if(info.code == 3) return alert(info.message);
+            if(info.code == 3){
+                alert(info.message);
+                setTimeout(() => window.location='', 10);
+            }
             if(info.code == 1) window.location = `${host}home`;
         }
         else{alert( get.status );}
