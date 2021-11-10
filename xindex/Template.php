@@ -1,6 +1,6 @@
 <?php
 
-namespace index;
+namespace xindex;
 
 use resource\{UrlParamsCompareIndex,BaseUrl};
 
@@ -19,15 +19,15 @@ class Template
 
         switch($param->index) {
             case 'registro':
-                $component = file_get_contents('index/content/register.php');
+                $component = file_get_contents('xindex/content/register.php');
             break;
 
             case 'recuperar-acceso':
-                $component = file_get_contents('index/content/recover-passwd.php');
+                $component = file_get_contents('xindex/content/recover-passwd.php');
             break;
             
             default:
-                $component = file_get_contents('index/content/login.php');
+                $component = file_get_contents('xindex/content/login.php');
             break;
         }
 
