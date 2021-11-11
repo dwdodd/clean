@@ -1,6 +1,6 @@
 <?php
 
-require_once PATH_TO . 'autoload.php';
+namespace src\user\services;
 
 final class CreateUserService
 {

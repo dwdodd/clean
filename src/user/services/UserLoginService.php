@@ -1,6 +1,7 @@
 <?php
 
-require_once PATH_TO . 'autoload.php';
+namespace src\user\services;
+
 use resource\SetToken;
 use src\user\repositories\UserLoginRepository;
 
