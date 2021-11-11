@@ -2,7 +2,7 @@
 
 require_once PATH_TO . 'autoload.php';
 use resource\Middleware;
-use src\user\infrastructure\repositories\GetUserListRepository;
+use src\user\repositories\GetUserListRepository;
 
 final class GetUserListService
 {

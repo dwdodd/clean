@@ -1,18 +1,13 @@
 <?php
 
 require_once PATH_TO . 'autoload.php';
-use resource\SetToken;
-use src\user\infrastructure\repositories\UserLoginRepository;
 
-final class UserLoginService
+final class CreateUserService
 {
     public function __construct($info)
     {
         try{
             if($info){
-                $repository = new UserLoginRepository;
-                $response = $repository->verifyCredential($info);
-
                 if(!$response) exit(json_encode([
                     'code' => 3,
                     'message' => 'Error en usuario ó contraseña'
