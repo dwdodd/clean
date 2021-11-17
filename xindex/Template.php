@@ -2,7 +2,7 @@
 
 namespace xindex;
 
-use resource\{UrlParamsCompareIndex,BaseUrl};
+use resource\{UrlParamsCompare,BaseUrl};
 
 class Template
 {
@@ -15,7 +15,7 @@ class Template
 
         if( count($reqUri) == 3 ) header('location:' . BaseUrl::url());
 
-        UrlParamsCompareIndex::param(['registro','recuperar-acceso'], $param->index);
+        UrlParamsCompare::param(['registro','recuperar-acceso'], $param->index);
 
         switch($param->index) {
             case 'registro':
