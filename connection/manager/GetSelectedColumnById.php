@@ -11,7 +11,6 @@ class GetSelectedColumnById
         $fields = implode(',',$data);
 
         try{
-            $dbc = $dbc;
             $sql = "SELECT $fields FROM $table WHERE $where = ?;";
             $response = $dbc->prepare($sql, [\PDO::ATTR_CURSOR => \PDO::CURSOR_SCROLL]);
             $response->execute([$id]);
