@@ -13,14 +13,13 @@ switch($param) {
     
     default:
         $title = 'Inicio - Dashboard';
-        $content = str_replace(
+        $content = \resource\Document::content(
             '{{token}}',
             $_SESSION['token-access'],
-            file_get_contents('content/home.php')
+            'home'
         );
     break;
 }
 
 app\layout\Template::app($title, $content);
-
 app\layout\Template::header_location();
