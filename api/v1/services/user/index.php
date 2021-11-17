@@ -1,8 +1,9 @@
 <?php
 
-define('PATH_TO', substr(dirname(__FILE__),0,22));
-$_POST = json_decode(file_get_contents("php://input"), true);
+require_once dirname(__DIR__).'/path.php';
 require_once PATH_TO.'autoload.php';
+
+$_POST = json_decode(file_get_contents("php://input"), true);
 
 switch (ltrim($_GET['info'],'/')) {
     case 'list':
