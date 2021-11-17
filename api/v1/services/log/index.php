@@ -6,7 +6,6 @@ require_once PATH_TO.'autoload.php';
 switch (ltrim($_GET['info'],'/')) {
     case 'in':
         $_POST = json_decode(file_get_contents("php://input"), true);
-        require_once PATH_TO . 'resource/CryptoJsAes.php';
 
         if(@$_SESSION['token-csrf']){
 

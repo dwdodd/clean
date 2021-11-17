@@ -12,7 +12,7 @@ SetEnvIfNoCase Request_URI \.(?:gif|jpe?g|png)$ no-gzip
   RewriteCond %{REQUEST_FILENAME} !-f
 
   ####### Index -Events #######
-  RewriteRule ^evento(.*)$ index.php?info=$1 [NC,QSA,L]
+  RewriteRule ^evento(.*)$ ?info=$1 [NC,QSA,L]
   #############################
 
   ####### Views #######
@@ -21,6 +21,7 @@ SetEnvIfNoCase Request_URI \.(?:gif|jpe?g|png)$ no-gzip
 
   ####### API Resource #######
   RewriteRule ^user-log(.*)$ api/v1/services/log/?info=$1 [NC,QSA,L]
+  RewriteRule ^user(.*)$ api/v1/services/user/?info=$1 [NC,QSA,L]
   #############################
 
   ########### Error-Document ############

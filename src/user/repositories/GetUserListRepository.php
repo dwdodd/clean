@@ -7,8 +7,8 @@ use connection\manager\OpenQuery;
 
 final class GetUserListRepository
 {
-    public function getList($info)
+    public function list()
     {
-        return OpenQuery::go("select concat(nombre, ' ', apellido) as usuario, correo from app_usuarios where nombre like '%$info->nombre%'", new ConnMySql);
+        return OpenQuery::go("select concat(nombre, ' ', apellido) as usuario, correo from app_usuarios", new ConnMySql);
     }
 }

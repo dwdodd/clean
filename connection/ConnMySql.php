@@ -2,7 +2,7 @@
 
 namespace connection;
 
-require_once 'envConn/.MySqlConfgiEnv';
+require_once 'envConn/.MySqlConfigEnv';
 
 class ConnMySql extends \PDO
 {

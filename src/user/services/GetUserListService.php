@@ -12,8 +12,8 @@ final class GetUserListService
         try{
             if($info){
                 Middleware::token_access($info->token);
-                $repository = new GetUserListRepository;
-                $response = $repository->getList($info);
+                $get = new GetUserListRepository;
+                $response = $get->list();
                 exit(json_encode($response));
             }
         }
