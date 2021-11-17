@@ -6,6 +6,8 @@ require_once PATH_TO . 'autoload.php';
 use app\views\home\helpers\HomeHook;
 use app\layout\Template;
 
+resource\UrlParamsCompare::param(['/','home'],$_GET['info']);
+
 Template::app(
     'Inicio - Dashboard',
     str_replace(
