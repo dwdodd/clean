@@ -4,7 +4,7 @@ require_once dirname(__DIR__).'/path.php';
 require_once PATH_TO . 'autoload.php';
 
 $param = trim($_GET['info'],'/');
-resource\UrlParamsCompare::param(['/','value'], $param);
+resource\UrlParamsCompare::param(['value'], $param);
 
 switch($param) {
     case 'value':
