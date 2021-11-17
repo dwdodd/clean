@@ -17,10 +17,10 @@ switch (ltrim($_GET['info'],'/')) {
                 'message' => 'Error no estas autorizado.'
             ]));
 
-            new src\user\services\UserLoginService( (object)$_POST );
+            new src\log\services\UserLoginService( (object)$_POST );
         }
 
-        new src\user\services\UserLoginService( (object)$_POST );
+        new src\log\services\UserLoginService( (object)$_POST );
     break;
     case 'out':
         session_destroy();
