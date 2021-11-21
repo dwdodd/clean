@@ -8,7 +8,6 @@ class Template
 {
     public static function app($title, $content)
     {
-        if(!isset($_SESSION)) session_start();
         if(!isset($_SESSION['id-session'])) self::header_location();
 
         $top = str_replace(
