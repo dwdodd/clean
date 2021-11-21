@@ -8,8 +8,6 @@ class Template
 {
     public static function index()
     {
-        if(!isset($_SESSION)) session_start();
-
         $reqUri = explode('/', rtrim($_SERVER['REQUEST_URI'], '/'));
         $param  = (object)['index'=> @$reqUri[3]];
 
