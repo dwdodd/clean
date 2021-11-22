@@ -13,11 +13,7 @@ switch($param) {
     
     default:
         $title = 'Inicio - Dashboard';
-        $content = \resource\Document::content(
-            '{{token}}',
-            $_SESSION['token-access'],
-            'home'
-        );
+        $content = \resource\Document::content('{{token}}', $_SESSION['token-access'], 'home');
     break;
 }
 

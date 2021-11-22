@@ -7,7 +7,7 @@ class UrlParamsCompare
     public static function param($verbs=[], $param)
     {
         $param = trim($param,'/');
-        if( $param && !in_array($param, $verbs) ) exit(self::text($param));
+        if( $param && !in_array($param, $verbs) ) \app\layout\Template::app('Not Found', self::text($param));
     }
 
     private static function text($param)
