@@ -3,8 +3,11 @@
 require_once dirname(__DIR__).'/path.php';
 require_once PATH_TO . 'autoload.php';
 
+use \resource\{UrlParamsCompare, Document};
+use app\layout\Template;
+
 $param = trim($_GET['info'],'/');
-resource\UrlParamsCompare::param(['value'], $param);
+UrlParamsCompare::param(['value'], $param);
 
 switch($param) {
     case 'value':
@@ -13,9 +16,9 @@ switch($param) {
     
     default:
         $title = 'Inicio - Dashboard';
-        $content = \resource\Document::content('{{token}}', $_SESSION['token-access'], 'home');
+        $content = Document::content('{{token}}', $_SESSION['token-access'], 'home');
     break;
 }
 
-app\layout\Template::app($title, $content);
-app\layout\Template::header_location();
+Template::app($title, $content);
+Template::header_location();
