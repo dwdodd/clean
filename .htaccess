@@ -20,7 +20,7 @@ SetEnvIfNoCase Request_URI \.(?:gif|jpe?g|png)$ no-gzip
   #####################
 
   ####### API Resource #######
-  RewriteRule ^user-log(.*)$ api/v1/services/log/?info=$1 [NC,QSA,L]
+  RewriteRule ^log(.*)$ api/v1/services/log/?info=$1 [NC,QSA,L]
   RewriteRule ^user(.*)$ api/v1/services/user/?info=$1 [NC,QSA,L]
   #############################
 

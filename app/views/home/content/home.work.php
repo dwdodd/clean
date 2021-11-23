@@ -3,7 +3,7 @@
 <div id="content"></div>
 <script type="module" async>
     const h1 = '<h1>Hola soy el Home - Dashboard :)</h1>';
-    const h3 = `<h3><a href="{{host}}user-log/out">salir</a></h3>`;
+    const h3 = `<h3><a href="{{host}}log/out">salir</a></h3>`;
     const list = '<div id="list"></div>';
     const rtoken = '<input type="hidden" id="token" value="{{token}}" />';
     const content = h1+h3+list+rtoken;

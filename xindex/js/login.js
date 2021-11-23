@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
         correo = CryptoJS.AES.encrypt(JSON.stringify(correo),fdecoderto,{ format: CryptoJSAesJson }).toString();
         clave  = CryptoJS.AES.encrypt(JSON.stringify(clave),fdecoderto,{ format: CryptoJSAesJson }).toString();
 
-        let get = await fetch(`${host}user-log/in`,{
+        let get = await fetch(`${host}log/in`,{
             method:'post',
             body: JSON.stringify({ correo, clave, token }),
             headers:{ 'Content-Type': 'application/json' }
