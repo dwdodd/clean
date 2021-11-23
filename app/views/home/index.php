@@ -1,7 +1,6 @@
 <?php
 
 require_once dirname(__DIR__).'/path.php';
-require_once PATH_TO . 'autoload.php';
 
 use \resource\{UrlParamsCompare, Document};
 use app\layout\Template;
