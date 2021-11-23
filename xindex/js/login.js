@@ -1,4 +1,4 @@
-import host from "../../assets/js/components/base_url.js";
+import host from "../../assets/js/hooks/base_url.js";
 
 document.addEventListener("DOMContentLoaded", () => {
     document.getElementById('btn-login').addEventListener('click', async () => {
